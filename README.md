@@ -1,7 +1,9 @@
 # MiditoArduino
 For SUTD Capstone 45 Pico Musical Engineering Installation project.
+Input: MIDI file, prefably downloaded from a sheet music site such as MuseScore.
+Output: Flashing LEDs (or solenoids, etc, depending how you wire your circuit) timed to the music.
 
-This project takes reference from [falcon](https://github.com/Tenchi2xh/Falcon/tree/master/falcon).
+Part 1 of this project takes reference from [falcon](https://github.com/Tenchi2xh/Falcon/tree/master/falcon).
 
 There are 4 ranges. The first three are common ranges provided by the Grand Illusions Music Boxes.
 THe fourth is a custom range of 25 notes created to provide better versatility.
