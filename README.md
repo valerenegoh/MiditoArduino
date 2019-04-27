@@ -1,7 +1,7 @@
 # MiditoArduino
 For SUTD Capstone 45 Pico Musical Engineering Installation project.
 
-This project takes reference from [falcon] (https://github.com/Tenchi2xh/Falcon/tree/master/falcon).
+This project takes reference from [falcon](https://github.com/Tenchi2xh/Falcon/tree/master/falcon).
 
 There are 4 ranges. The first three are common ranges provided by the Grand Illusions Music Boxes.
 THe fourth is a custom range of 25 notes created to provide better versatility.
