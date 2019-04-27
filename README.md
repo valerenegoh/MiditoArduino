@@ -1,5 +1,5 @@
 # MiditoArduino
-For SUTD Capstone 45 Pico Musical Engineering Installation
+For SUTD Capstone 45 Pico Musical Engineering Installation project.
 
 This project takes reference from [falcon] (https://github.com/Tenchi2xh/Falcon/tree/master/falcon).
 
