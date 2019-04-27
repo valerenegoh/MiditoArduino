@@ -22,7 +22,7 @@ Enter the following in your command line:<br/>
 For example, to play Do Re Mi in 25 note range:<br/>
 `python preprocessing.py 2 GI25`
 
-**Part 2: Running** plays the song in real time through an Arduino (e.g. LED flashing lights) via running a Serial communication with Python.<br/>
+**Part 2: Running** reads the corresponding txt file and sends the notes to play to an Arduino via Serial communication. Result is the song being played in real time through e.g. LED flashing lights.<br/>
 You will need a connected Arduino for this to work.<br/>
 Enter the following in your command line:<br/>
 'python main.py'
