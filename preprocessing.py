@@ -7,10 +7,6 @@ import midi
 from util import *
 from boxes import *
 
-# basename = "Stand_by_me"
-# box = GI15    # change to GI15, GI20, GI30 or GI25
-
-
 def main(argv):
     basename = argv[0]
     box = eval(argv[1])
@@ -58,7 +54,7 @@ def main(argv):
     notes_perbeat = dict((beat,[]) for beat in range(beats(tracks)*2))
     
     for i in range(len(tracks)):
-#        if i == 1:    # uncomment this if you want to only output melody/accompaniment
+#        if i == 1:    # uncomment this if you want to only output certain tracks
             start = 0
             notes_on = list(filter(lambda note: note.is_event(midi.events.NoteOnEvent.statusmsg), tracks[i]))
             for note in notes_on:
@@ -71,11 +67,6 @@ def main(argv):
     for notes_list in notes_perbeat.values():
 #        print(notes_list)
         file.write(" ".join(str(note) for note in notes_list) + "\n")
-
-#    midi.write_midifile("midi/%s_%s.mid" % (basename, box.symbol), tracks)
-
-#    punch(basename, tracks, box)
-
     
 if __name__ == '__main__':
     main(argv[1:])

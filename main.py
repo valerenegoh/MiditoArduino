@@ -4,12 +4,16 @@ import serial
 from time import sleep
 from functools import partial
 
-playlist = {
-        1: "Stand By Me",
-        2: "Do Re Mi",
-        3: "How Deep is your Love"
-        }
+# retreive list of songs from playlist.txt
+f = open("playlist.txt", 'r')
+playlist = {}
+for line in f:
+    k, v = line.strip().split('=')
+    playlist[int(k.strip())] = v.strip()
 
+f.close()
+
+# map each note to a character for Arduino communication
 dict = {
         "48": '0',  # C
         "50": '1',  # D
@@ -48,7 +52,7 @@ def runSong(num):
                     serial.write(dict[notes[i]].encode())
             sleep(0.3)         # tempo of song
 
-#buttons = list()
+# simple GUI using tkinter
 label1 = Label(root, text = "Choose a song", fg="green")
 label1.pack()
 for num, song in playlist.items():
