@@ -1,9 +1,10 @@
 # MiditoArduino
 Stage 1 of SUTD Capstone 45 Pico Musical Engineering Installation project.<br/>
 - Input: MIDI file, prefably downloaded from a sheet music site such as MuseScore.<br/>
-- Output: Flashing LEDs (or solenoids, etc, depending how you wire your circuit) timed to the music.<br/>
+- Output: Flashing LEDs timed to the music.<br/>
 
 Part 1 of this project takes reference from [falcon](https://github.com/Tenchi2xh/Falcon/tree/master/falcon).
+Part 2 requires connection to an Anrduino MEGA. The Arduino script requires you to set up an electronic circuit with 25 LEDs/solenoids/etc as shown in the video. Ensure they are wired to the corresponding pin numbers as in the `Arduino` file.
 
 There are 4 ranges. The first three are common ranges provided by the Grand Illusions Music Boxes.<br/>
 The fourth is a custom range of 25 notes created to provide better versatility.
