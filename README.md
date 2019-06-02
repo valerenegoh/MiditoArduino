@@ -1,5 +1,5 @@
 # MiditoArduino
-For SUTD Capstone 45 Pico Musical Engineering Installation project.<br/>
+Stage 1 of SUTD Capstone 45 Pico Musical Engineering Installation project.<br/>
 - Input: MIDI file, prefably downloaded from a sheet music site such as MuseScore.<br/>
 - Output: Flashing LEDs (or solenoids, etc, depending how you wire your circuit) timed to the music.<br/>
 
