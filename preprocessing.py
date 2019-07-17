@@ -3,6 +3,7 @@
 from sys import argv
 
 import midi
+import math
 
 from util import *
 from boxes import *
@@ -51,14 +52,16 @@ def main(argv):
         note.set_pitch(closest)
         
     # write to file
-    notes_perbeat = dict((beat,[]) for beat in range(beats(tracks)*3))
+    # sweetspot = 2.3    # use this for songs without semiquaver
+    sweetspot = 4.6    # use this for songs with semiquaver
+
+    notes_perbeat = dict((beat,[]) for beat in range(beats(tracks)*math.ceil(sweetspot))) 
     
     for i in range(len(tracks)):
        # if i == 1:    # uncomment this if you want to only output certain tracks
             start = 0
             notes_on = list(filter(lambda note: note.is_event(midi.events.NoteOnEvent.statusmsg), tracks[i]))
             for note in notes_on:
-                sweetspot = 2.3  # change this value through trial and error. It should range between 2 to
                 start += int(sweetspot*((note.tick + 1)/tracks.resolution))
 #                print(note, start)
                 if note.velocity > 0:
@@ -72,4 +75,3 @@ def main(argv):
     
 if __name__ == '__main__':
     main(argv[1:])
-    
