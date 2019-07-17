@@ -51,14 +51,15 @@ def main(argv):
         note.set_pitch(closest)
         
     # write to file
-    notes_perbeat = dict((beat,[]) for beat in range(beats(tracks)*2))
+    notes_perbeat = dict((beat,[]) for beat in range(beats(tracks)*3))
     
     for i in range(len(tracks)):
-#        if i == 1:    # uncomment this if you want to only output certain tracks
+       # if i == 1:    # uncomment this if you want to only output certain tracks
             start = 0
             notes_on = list(filter(lambda note: note.is_event(midi.events.NoteOnEvent.statusmsg), tracks[i]))
             for note in notes_on:
-                start += int(2*((note.tick + 1)/tracks.resolution))
+                sweetspot = 2.3  # change this value through trial and error. It should range between 2 to
+                start += int(sweetspot*((note.tick + 1)/tracks.resolution))
 #                print(note, start)
                 if note.velocity > 0:
                     notes_perbeat[start].append(note.pitch)
@@ -66,7 +67,8 @@ def main(argv):
     file = open("txt/%s_%s.txt" % (basename, box.symbol), "w")
     for notes_list in notes_perbeat.values():
 #        print(notes_list)
-        file.write(" ".join(str(note) for note in notes_list) + "\n")
+        newlist = list(dict.fromkeys(notes_list))   # remove duplicate notes
+        file.write(" ".join(str(note) for note in newlist) + "\n")
     
 if __name__ == '__main__':
     main(argv[1:])
