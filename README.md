@@ -18,7 +18,9 @@ Add new MIDI files to `midi folder` and update them in `playlist.txt`
 There are 2 parts to this project.
 
 **Part 1: Preprocessing** transposes a MIDI file to fit X-note range. Outputs a txt document in `txt folder` that is readable by Arduino in Part 2.<br/>
-Enter the following in your command line:<br/>
+1. Ensure python- midi is installed:<br/>
+`pip install git+https://github.com/vishnubob/python-midi@feature/python3`
+2. Enter the following in your command line:<br/>
 `python preprocessing.py [song] [range]`
 For example, to play Do Re Mi in 25 note range:<br/>
 `python preprocessing.py 2 GI25`
