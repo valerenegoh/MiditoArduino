@@ -59,13 +59,13 @@ def main(argv):
     
     for i in range(len(tracks)):
        # if i == 1:    # uncomment this if you want to only output certain tracks
-            start = 0
+            tick = 0
             notes_on = list(filter(lambda note: note.is_event(midi.events.NoteOnEvent.statusmsg), tracks[i]))
             for note in notes_on:
-                start += int(sweetspot*((note.tick + 1)/tracks.resolution))
+                tick += int(sweetspot*((note.tick + 1)/tracks.resolution))
 #                print(note, start)
                 if note.velocity > 0:
-                    notes_perbeat[start].append(note.pitch)
+                    notes_perbeat[tick].append(note.pitch)
     
     file = open("txt/%s_%s.txt" % (basename, box.symbol), "w")
     for notes_list in notes_perbeat.values():
