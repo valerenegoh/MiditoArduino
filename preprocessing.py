@@ -52,10 +52,10 @@ def main(argv):
         note.set_pitch(closest)
         
     # write to file
-    sweetspot = 2.3    # use this for songs without semiquaver
+    sweetspot = 2.15    # use this for songs without semiquaver
     # sweetspot = 4.6    # use this for songs with semiquaver
 
-    notes_perbeat = dict((beat,[]) for beat in range(beats(tracks)*math.ceil(sweetspot))) 
+    notes_perbeat = dict((beat,[]) for beat in range(beats(tracks)*math.floor(sweetspot)+5)) 
     
     for i in range(len(tracks)):
        # if i == 1:    # uncomment this if you want to only output certain tracks
@@ -75,4 +75,3 @@ def main(argv):
     
 if __name__ == '__main__':
     main(argv[1:])
-    
